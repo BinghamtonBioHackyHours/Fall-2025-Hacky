@@ -60,12 +60,12 @@ download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-20
 
 # We can print the data frame without the 4th row
 
-cats[-4, ] # comma with nothing after it indicates we want to include all the columns
+
 
 
 # Lets remove multiple rows by using a vector
 
-cats[c(-2,-3), ]
+
 
  # reloading data
  # adding age again
@@ -185,6 +185,7 @@ cats[c(-2,-3), ]
 
 
 # Solution 
+
 
 
 
