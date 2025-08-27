@@ -11,7 +11,7 @@
 
 # - How can I manipulate a data frame?
 
-# Lets download our data directly from our github, we will get beak to this later for now just run these lines
+# Lets download our data directly from our github, we will get back to this later for now just run these lines
 
 download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-2025-Hacky/refs/heads/main/Crash%20Course%20to%20R/data/feline-data.csv", destfile = "data/feline-data.csv")
 
@@ -24,7 +24,7 @@ download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-20
 
 
 
-## Adding Rows
+## Adding Rows ----------------
 
 # Lets start by adding a new column, first we need to make a new vector
 
@@ -41,7 +41,7 @@ download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-20
 # Why didn't this work? Of course, R wants to see one element in our new column for every row in the table:
 
 
-# So for it to work we need to have we need to make sure this is TRUE:
+# So for it to work we need to make sure this is TRUE:
 
 
 # Lets fix it
@@ -56,7 +56,7 @@ download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-20
 
 
 
-## Removing rows
+## Removing rows ----------------
 
 # We can print the data frame without the 4th row
 
@@ -64,7 +64,6 @@ download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-20
 
 
 # Lets remove multiple rows by using a vector
-
 
 
  # reloading data
@@ -82,7 +81,7 @@ download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-20
 
 # There are more ways to do this, it all comes down to preference
 
-## Appending to a data frame
+## Appending to a data frame ----------------
 
 # It is good practice to consider that: columns are vectors | rows are lists
 
@@ -104,7 +103,7 @@ download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-20
 ## Solution
 
 
-
+##### Understanding our data ----------------
 
 
 # Lets play around with a more realistic example
@@ -185,7 +184,6 @@ download.file("https://raw.githubusercontent.com/BinghamtonBioHackyHours/Fall-20
 
 
 # Solution 
-
 
 
 
