@@ -7,7 +7,7 @@
 
 ##      CODE FOR DOWNLOADING IMAGE        ##
 
-download.file("https://raw.githubusercontent.com/rdalipo1/Fall-2025-Hacky/refs/heads/main/Loops_in_R/loops.png", destfile = "data/loops.png", mode = "wb")
+download.file("https://github.com/BinghamtonBioHackyHours/Fall-2025-Hacky/raw/refs/heads/main/Loops_in_R/loops.png", destfile = "data/loops.png", mode = "wb")
 
 
 #install.packages('png')
@@ -210,3 +210,4 @@ apply(my.mat, 2, sum) # apply sum() on columns of my.mat
 
 apply(mymat, 1, function(x, y)
   sum(x) + y, y = 4.5) # apply custom function that adds the number y = 4.5 to the sum
+
