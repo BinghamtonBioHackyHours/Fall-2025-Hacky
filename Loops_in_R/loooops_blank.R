@@ -190,7 +190,7 @@ mydframe1
 # It may be a small difference with this small sample size but try changing the n and m to 100 or 1000
 
 
-# Functions like rowSums(), colSums(), rowMeans(), and colMeans() are very neat and use vectorization to get information much more efficiently than writting separate for loops
+# Functions like rowSums(), colSums(), rowMeans(), and colMeans() are very neat and use vectorization to get information much more efficiently than writing separate for loops
 
 # The apply() family of functions are really just hidden for loops
 
@@ -208,5 +208,6 @@ apply(my.mat, 1, sum) # apply sum() on rows of my.mat
 
 apply(my.mat, 2, sum) # apply sum() on columns of my.mat
 
-apply(mymat, 1, function(x, y)
+apply(my.mat, 1, function(x, y)
   sum(x) + y, y = 4.5) # apply custom function that adds the number y = 4.5 to the sum
+
