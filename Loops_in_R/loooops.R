@@ -41,9 +41,15 @@ rasterImage(loops,0,0,1,1)
 
 # Lets take an example that finds the square of the first 10 elements in a vector:
 
+v1 <- 1:30 # creating vector with numbers from 1 to 30
 
+vsq <- c()
 
-
+for (i in 1:10){
+  # the i-th element of 'v1' squared into i-th position of vsq
+  vsq[i] <- v1[i] * v1[i]
+  print(vsq[i])
+}
 
 
 
@@ -54,16 +60,14 @@ rasterImage(loops,0,0,1,1)
 
 # Lets use nested for loops to print the adjective of each fruit
 
+adjectives <- c('exotic', 'tasty', 'grotesque')
 
-
-
-
-
-
-
-
-
-
+fruits <- c('apple', 'banana', 'cherry')
+for (adj in adjectives){
+  for (frt in fruits){
+    print(paste(adj,frt))
+  }
+}
 
 ##### Challenge 1 #####
 
@@ -72,22 +76,31 @@ rasterImage(loops,0,0,1,1)
 
 # Select an integer
 
-
+n <- 50
 
 # Create a 'n' x 'n' matrix with zeros
 
-
+my.mat <- matrix(0, n,n)
 
 # For each row and column assign values based on position
 # The values should be the product of the indexes
+for (row in 1:dim(my.mat)[1]){
+  for (col in 1:dim(my.mat)[2]){
+    my.mat[row,col] <- row * col
+  }
+}
 
 
-
+# There are two nested loops each with their own curly brackets, each with their own block governed by its own index.
 
 
 # Using conditional statements, print the fist 10x10 chunk or the fist n x n chunk if n is less than 10
 
-
+if (n > 10) {
+  my.mat[1:10, 1:10]
+} else {
+  my.mat[1:n, 1:n]
+}
 
 ##### While Loops #####
 
@@ -99,14 +112,18 @@ rasterImage(loops,0,0,1,1)
 
 # Lets create a while loop that requires a specific value entered by the user in order to complete
 
+user.int <- function(){
+  n <- readline(prompt = 'Please, enter THE answer: ')
+}
 
+response <- as.integer(user.int())
 
+while (response!=42) {   
+  print("Sorry, the answer to THE question MUST be 42");
+  response <- as.integer(user.int());
+}
 
-
-
-
-
-
+# This loops will keep repeating until the correct answer 42 is given
 
 
 ##### Repeat Loops #####
@@ -115,27 +132,44 @@ rasterImage(loops,0,0,1,1)
 
 # As an example lets rewrite the above while loop to be a repeat loop
 
+user.int <- function(){
+  n <- readline(prompt = 'Please, enter THE answer: ')
+}
 
-
-
-
-
-
-
-
-
+repeat {
+  response <- as.integer(user.int());
+  if(response == 42) {
+    print("Correct!");
+    break
+  } else print("Sorry, the answer to THE question MUST be 42")
+}
 
 ##### Interruption and Exit loops in R #####
 
 # How do you exit a loop without it coming to a 'natural' end, so reaching the desired number of iterations in a for loop or meeting the condition in while and repeat loops
 
 
+# Here is a simple example for break
 
 
+x <- 1:5
+
+for(val in x) {
+  if(val ==3){
+    break
+  }
+  print(val)
+}
+
+# What if we just want to skip the number 3 in the vector x (next)
 
 
-
-
+for(val in x){
+  if(val == 3){
+    next
+  }
+  print(val)
+}
 
 ##### Alternatives in R #####
 
@@ -148,13 +182,22 @@ rasterImage(loops,0,0,1,1)
 
 # For loop
 
+v1 <- c(3,4,5)
+v2 <- c(3,4,6)
+v3 <- c(0,0,0)
+n = length(v1)
 
+for (i in 1:n){
+  v3[i] <- v1[i] + v2[i]
+}
+v3
 
-# Vectorization
+# Or we can use the built in vectorization:
 
+v3 <- v1 + v2
+v3
 
-
-##### Computational Efficiency
+# Example 2 | Computational Efficiency
 
 # Below is an example of inefficiently changing values of a dataframe 
 
@@ -190,7 +233,7 @@ mydframe1
 # It may be a small difference with this small sample size but try changing the n and m to 100 or 1000
 
 
-# Functions like rowSums(), colSums(), rowMeans(), and colMeans() are very neat and use vectorization to get information much more efficiently than writing separate for loops
+# Functions like rowSums(), colSums(), rowMeans(), and colMeans() are very neat and use vectorization to get information much more efficiently than writting separate for loops
 
 # The apply() family of functions are really just hidden for loops
 
@@ -208,6 +251,5 @@ apply(my.mat, 1, sum) # apply sum() on rows of my.mat
 
 apply(my.mat, 2, sum) # apply sum() on columns of my.mat
 
-apply(my.mat, 1, function(x, y)
+apply(mymat, 1, function(x, y)
   sum(x) + y, y = 4.5) # apply custom function that adds the number y = 4.5 to the sum
-
