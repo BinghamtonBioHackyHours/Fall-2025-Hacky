@@ -7,3 +7,6 @@ devtools::install_github("RLesur/Rcade")
 Rcade::games$Pacman
 Rcade::games
 Rcade::games
+
+shiny::runGitHub(repo = "dreamRs/memory-hex")
+
